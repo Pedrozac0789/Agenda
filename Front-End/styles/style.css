@@ -1,0 +1,370 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&family=Roboto:wght@100;300;400;500;700;900&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color: #dcc9e4;
+}
+
+/* Inicio do HEADER */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(41, 2, 63);
+  width: 100%;
+  height: 150px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+h1 {
+  margin-bottom: 15px;
+  font-size: 40px;
+
+  color: #8a69f6;
+  text-shadow: 2px 1px 3px hsl(263, 98%, 64%);
+}
+
+h1 span {
+  color: #8a69f6;
+  font-weight: 700;
+  font-size: 45px;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+li {
+  list-style: none;
+}
+.btn-header {
+  color: rgb(216, 161, 247);
+  margin: 0 20px;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: #460498;
+  border-radius: 12px;
+  border: 1px solid#2e014b;
+  margin-bottom: 20px;
+  box-shadow: 0px 2px 13px 1px #8908ec84;
+  width: 250px;
+  height: 35px;
+}
+
+/* final do HEADER */
+
+main {
+  color: rgb(111, 4, 172);
+  text-align: center;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+.tarefa {
+  margin-right: 500px;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img {
+  width: 100px;
+  margin-bottom: 15px;
+}
+.img {
+  width: 100%;
+  height: 100%;
+}
+
+.img img {
+  width: 470px;
+  margin-top: 80px;
+}
+
+#ul {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 2px solid #8a69f6;
+  width: 300px;
+  border-radius: 10px;
+  background-color: rgb(41, 2, 63);
+
+  /* Limita altura para ativar o scroll quando necessário */
+  max-height: 360px;
+  overflow-y: auto;
+  padding-right: 8px;
+
+  /* Compatibilidade */
+  -ms-overflow-style: -ms-autohiding-scrollbar; /* IE/Edge legacy */
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: rgba(138, 105, 246, 0.35) rgba(255, 255, 255, 0.03); /* Firefox */
+}
+
+/* WebKit scrollbar */
+#ul::-webkit-scrollbar {
+  width: 10px;
+}
+#ul::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+}
+#ul::-webkit-scrollbar-thumb {
+  background: rgba(138, 105, 246, 0.35);
+  border-radius: 10px;
+  border: 2px solid rgba(41, 2, 63, 0.6);
+}
+
+hr {
+  border-bottom: 1px solid rgb(131, 22, 194) !important;
+}
+
+li {
+  color: rgb(216, 161, 247);
+}
+
+.semana {
+  /* background-color: #da0f20; */
+  width: 90%;
+  height: 200px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+}
+.h2 {
+  margin-bottom: 100px;
+}
+
+.hideen {
+  display: none;
+}
+#sectionWeek {
+  margin-bottom: 100px;
+  width: 100%;
+  margin-left: 100px;
+}
+
+/* TABELA SEMANAL */
+
+#sectionWeek table {
+  width: 95%;
+  margin: 10px auto 40px;
+  border-collapse: separate;
+  border-spacing: 10px;
+  background: linear-gradient(180deg, #2f0650 0%, #24043b 100%);
+  color: #e9def9;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+/* Cabeçalho (primeira linha inserida no tbody pelo script) */
+#tableBodySemana tr:first-child th {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 12px 14px;
+  text-align: left;
+  font-weight: 600;
+  color: #ffdfff;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Linhas de tarefas */
+#tableBodySemana tr {
+  background: transparent;
+}
+
+/* Células contendo tarefas */
+#tableBodySemana td {
+  vertical-align: top;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  min-width: 120px;
+  max-width: 220px;
+  height: 120px; /* altura fixa para uniformizar linhas */
+  overflow: hidden;
+  position: relative;
+}
+
+/* Se houver overflow de tarefas dentro da célula, mostra scroll interno */
+#tableBodySemana td .tarefa-list {
+  max-height: 100%;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+/* estilo para cada tarefa dentro da célula */
+.tarefa-desc {
+  font-weight: 600;
+  color: #f6e8ff;
+  margin-bottom: 6px;
+  line-height: 1.2;
+  word-break: break-word;
+}
+
+.tarefa-horario {
+  font-size: 12px;
+  color: #d7bff9;
+  margin-bottom: 8px;
+}
+
+/* Ações (botões) */
+.tarefa-actions {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.btns {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.03);
+  color: #f2dfff;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 6px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 120ms ease, background 120ms ease, box-shadow 120ms;
+  font-size: 14px;
+}
+
+.btns:hover {
+  transform: translateY(-2px);
+  background: rgba(138, 105, 246, 0.15);
+  box-shadow: 0 6px 16px rgba(138, 105, 246, 0.12);
+}
+
+.btns i {
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+/* Célula vazia */
+#tableBodySemana td:empty,
+#tableBodySemana td:contains("—") {
+  display: table-cell;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Scrollbar custom dentro das células que rolam */
+#tableBodySemana td .tarefa-list::-webkit-scrollbar {
+  width: 8px;
+}
+#tableBodySemana td .tarefa-list::-webkit-scrollbar-thumb {
+  background: rgba(138, 105, 246, 0.35);
+  border-radius: 8px;
+}
+
+/* Responsividade: em telas pequenas empilha as colunas */
+@media (max-width: 900px) {
+  #sectionWeek table {
+    width: 98%;
+    font-size: 14px;
+  }
+
+  /* transforma cada coluna em bloco empilhado:
+     cada "linha" real do layout virará uma "card" com cabeçalho do dia */
+  #tableBodySemana tr:first-child {
+    display: none;
+  } /* esconde header tradicional */
+
+  /* cria um layout alternativo: uma linha por dia com duas colunas (dia / conteúdo) */
+  #tableBodySemana {
+    display: block;
+  }
+  #tableBodySemana tr {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  #tableBodySemana td {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 12px;
+  }
+  /* adiciona um mini-header dentro de cada célula (injetar via JS se quiser) */
+}
+
+/* pequenas melhorias visuais */
+#tableBodySemana td .tarefa-actions .btns:active {
+  transform: translateY(0);
+  opacity: 0.95;
+}
+
+/* SCROLLBAR DA TABELA SEMANAL */
+
+#tableBodySemana td .tarefa-list {
+  /* limita a área interna e habilita scroll */
+  max-height: calc(100% - 12px);
+  overflow-y: auto;
+  padding-right: 8px;
+
+  /* suaviza rolagem em iOS */
+  -webkit-overflow-scrolling: touch;
+
+  /* compatibilidade e aparência em outros navegadores */
+  -ms-overflow-style: -ms-autohiding-scrollbar; /* IE/Edge legacy */
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: rgba(138, 105, 246, 0.35) rgba(255, 255, 255, 0.03); /* Firefox */
+}
+
+/* WebKit scrollbar */
+#tableBodySemana td .tarefa-list::-webkit-scrollbar {
+  width: 8px;
+}
+#tableBodySemana td .tarefa-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+}
+#tableBodySemana td .tarefa-list::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    rgba(138, 105, 246, 0.35),
+    rgba(120, 80, 200, 0.35)
+  );
+  border-radius: 8px;
+  border: 2px solid rgba(41, 2, 63, 0.6);
+}
+#tableBodySemana td .tarefa-list::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(138, 105, 246, 0.5),
+    rgba(120, 80, 200, 0.5)
+  );
+}

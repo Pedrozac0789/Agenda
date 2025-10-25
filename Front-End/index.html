@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/test.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>Organize+</title>
+  </head>
+  <body>
+    <header>
+      <section class="logo">
+        <img src="./assets/img1.png" alt="" />
+        <h1>Organize <span>+</span></h1>
+      </section>
+
+      <nav>
+        <ul>
+          <li>
+            <button class="btn-header" type="button">Adicionar Tarefa</button>
+          </li>
+          <li>
+            <a href="./ProgramaSemanal/index.html"
+              ><button class="btn-header" type="button">
+                Criar programa semanal
+              </button></a
+            >
+          </li>
+          <li>
+            <a href="#h2">
+            <button class="btn-header" type="button" onclick="openWeek()">
+              Tabela Semanal
+            </button>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="home">
+        <div class="img">
+          <img src="./assets/img4.png" alt="" />
+        </div>
+        <div class="tarefa">
+          <h1 id="dds"></h1>
+          <h2 id="diaAtual">Dia:</h2>
+
+          <section>
+            <ul id="ul">
+              <li></li>
+            </ul>
+          </section>
+        </div>
+      </section>
+
+      <div id="sectionWeek" class="hideen">
+        <h2 id="h2">Tabela Semanal</h2>
+        <section class="semana">
+          <table>
+            
+            <tbody id="tableBodySemana"></tbody>
+                
+          </table>
+        </section>
+      </div>
+    </main>
+    
+     <footer>
+        <p>Desenvolvido por Pedro Zacarias@Projeto final-Let's Code</p>
+     </footer>
+
+    <script src="./scripts/script.js"></script>
+  </body>
+</html>
