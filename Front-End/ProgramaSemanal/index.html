@@ -4,13 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
+   
+
 
     <title>Crie um Programa Semanal</title>
   </head>
   <body>
-    <header>
-      <h1 class="title-header">Programa Semanal</h1>
+     <header>
+      <section class="logo">
+        <img src="../assets/img1.png" alt="" />
+        <h1>Organize <span>+</span></h1>
+      </section>
+
+      <nav>
+        <ul>
+          <li>
+           <a href="../index.html"> <button class="btn-header" type="button">Home</button></a> 
+          </li>
+          <li>
+            <a href="./ProgramaSemanal/index.html"
+              ><button class="btn-header" type="button">
+                Criar programa semanal
+              </button></a
+            >
+          </li>
+          <li>
+            <a href="#h2">
+            <button class="btn-header" type="button" onclick="openWeek()">
+              Tabela Semanal
+            </button>
+            </a>
+          </li>
+        </ul>
+      </nav>
     </header>
+
     <main>
       <section class="card-home">
         <div class="img-home">
@@ -60,7 +88,7 @@
           </form>
         </div>
       </section>
-      <button class="btnVoltar"><a href="../index.html">Voltar</a></button>
+      
     </main>
     <script src="../scripts/script.js"></script>
   </body>
