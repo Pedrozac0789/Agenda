@@ -59,25 +59,17 @@ app.get("/tarefas/:date", async (req, res) => {
 //SELECT * FROM tabela WHERE DAYOFWEEK(iddiaSemana) = 1;
 app.post("/adicionar", async (req, res) => {
   try {
-    // const {diaSemana} = req.body;
+    const {diaAtual} = req.body;  
     const { descricao } = req.body;
     const { start_time } = req.body;
     const { end_time } = req.body;
-    console.log(descricao, start_time, end_time);
+    console.log(descricao,diaAtual , start_time, end_time);
     const sql =
-      "INSERT INTO  tarefas (descricao, date ,start_time, end_time) VALUES (?,NOW(), ?, ?)";
+      "INSERT INTO  tarefas (descricao, date ,start_time, end_time) VALUES (?, ?, ?, ?)";
     const [result, fields] = await conexao
       .promise()
-      .query(sql, [descricao, start_time, end_time]);
-    // const insertId = result.insertId;
-    // const resultado = await conexao
-    //   .promise()
-    //   .query(
-    //     "INSERT INTO tarefas_Has_DiaSemana (tarefas_idtarefas,diaSemana_iddiaSemana) VALUES (?,?);",
-    //     [insertId,diaSemana]
-    //   );
-
-    // console.log([result, fields]);
+      .query(sql, [descricao, diaAtual, start_time, end_time]);
+  
     return res.json({ message: "Tarefa inserida com sucesso" });
   } catch (error) {
     console.log(error);

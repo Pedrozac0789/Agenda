@@ -19,7 +19,7 @@ if (diaDaSemana) {
   diaDaSemana.textContent += diaSemana;
 }
 
-console.log(date);
+// console.log(date);
 
 // Adcionar a Tarefas a tabela
 
@@ -68,22 +68,24 @@ function week() {}
 // ADICIONAR TAREFAS NO BANCO DE DADOS
 
 async function adicionarTarefa() {
+  const diaAtual = document.getElementById("diaSemana").value;
   const descricao = document.getElementById("descricao").value;
   const start_time = document.getElementById("tempI").value;
   const end_time = document.getElementById("tempF").value;
-  console.log(date, descricao, start_time, end_time);
+  // console.log(date, descricao, start_time, end_time);
 
   if (!descricao && !start_time && !end_time) {
     alert("Digite seu compromisso e o horario");
     return;
   }
-  console.log(diaSemana, descricao, start_time, end_time);
+  console.log(diaAtual, descricao, start_time, end_time);
   const response = await fetch("http://localhost:3002/adicionar", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
+      diaAtual: diaAtual,
       descricao: descricao,
       start_time: start_time,
       end_time: end_time,
@@ -139,16 +141,16 @@ for (let i = 0; i < 7; i++) {
   semana.push({
     data: dia.toLocaleDateString("pt-BR"),
     nomeDia: nomesDias[dia.getDay()],
-    dataISO: dia.toISOString().split("T")[0]
+    dataISO: `${dia.getFullYear()}-${dia.getMonth() + 1}-${dia.getDate()}`
   });
 }
 console.log(semana)
 const select_diaSemana = document.getElementById("diaSemana");
 console.log(select_diaSemana);
 select_diaSemana.innerHTML = semana.map((item) => { 
-  return ` <option value="1">Domingo</option>`
+  return ` <option value="${item.dataISO}">${item.nomeDia}</option>`
 })
-
+ 
 // Busca tarefas de uma data específica
 async function buscarTarefasDate(dateISO) {
   try {
