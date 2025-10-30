@@ -210,8 +210,7 @@ function renderTabelaSemana(semanaComTarefas) {
   semanaComTarefas.forEach((dia) => {
     const th = document.createElement("th");
     th.textContent =
-      dia.nomeDia +
-      (dia.dataISO ? ` (${dia.dataISO})` : dia.data ? ` (${dia.data})` : "");
+      dia.nomeDia ;
     headerRow.appendChild(th);
   });
   thead.appendChild(headerRow);
@@ -287,3 +286,4 @@ function renderTabelaSemana(semanaComTarefas) {
 
 // Inicia a renderização ao carregar a página
 document.addEventListener("DOMContentLoaded", carregarSemana);
+
