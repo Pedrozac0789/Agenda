@@ -147,9 +147,11 @@ for (let i = 0; i < 7; i++) {
 console.log(semana)
 const select_diaSemana = document.getElementById("diaSemana");
 console.log(select_diaSemana);
+if(select_diaSemana){
 select_diaSemana.innerHTML = semana.map((item) => { 
   return ` <option value="${item.dataISO}">${item.nomeDia}</option>`
 })
+}
  
 // Busca tarefas de uma data específica
 async function buscarTarefasDate(dateISO) {
