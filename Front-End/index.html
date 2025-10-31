@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/test.css" />
+    <link rel="stylesheet" href="style.css" />
     <link
       href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
       rel="stylesheet"
@@ -54,7 +54,7 @@
           <h2 id="diaAtual">Dia:</h2>
 
           <section>
-            <ul id="ul">
+            <ul id="listaTarefas" class="ul">
               <li></li>
             </ul>
           </section>
@@ -69,19 +69,20 @@
             <label for="descricao">Compromisso</label>
             <input
               id="descricao"
-              name="nome"
+              name="descricao"
               type="text"
               placeholder="Ex: Reunião, Aula, etc."
               required
             />
 
             <label for="tempI">Tempo Inicial</label>
-            <input id="tempI" name="tempoInicial" type="time" required />
+            <input id="tempI" name="tempI" type="time" required />
 
             <label for="tempF">Tempo Final</label>
-            <input id="tempF" name="tempoFinal" type="time" required />
+            <input id="tempF" name="tempF" type="time" required />
 
-            <button type="submit" id="btnSalvar">Salvar</button>
+            <button style="cursor: pointer;" type="submit" id="btnSalvar">Salvar</button>
+            <button style="cursor: pointer;" type="button" id="btnCancelar">Cancelar</button>
           </form>
         </div>
       </div>
@@ -91,6 +92,6 @@
       <p>Desenvolvido por Pedro Zacarias@Projeto final-Let's Code</p>
     </footer>
 
-    <script src="./scripts/script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

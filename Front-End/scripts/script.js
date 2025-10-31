@@ -1,8 +1,6 @@
-
-
 const diaAtual = document.getElementById("diaAtual");
-
 const diaDaSemana = document.getElementById("dds");
+
 let dia = new Date().getDate();
 const mes = new Date().getMonth() + 1;
 const ano = new Date().getFullYear();
