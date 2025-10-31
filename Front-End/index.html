@@ -8,6 +8,7 @@
       href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./styles/modal.css" />
     <title>Organize+</title>
   </head>
   <body>
@@ -20,7 +21,9 @@
       <nav>
         <ul>
           <li>
-            <button class="btn-header" type="button">Home</button>
+            <a href="./index.html">
+              <button class="btn-header" type="button">Home</button>
+            </a>
           </li>
           <li>
             <a href="./ProgramaSemanal/index.html"
@@ -30,10 +33,10 @@
             >
           </li>
           <li>
-            <a href="#h2">
-            <button class="btn-header" type="button" onclick="openWeek()">
-              Tabela Semanal
-            </button>
+            <a href="./TabelaSemanal/index.html#h2">
+              <button class="btn-header" type="button" onclick="openWeek()">
+                Tabela Semanal
+              </button>
             </a>
           </li>
         </ul>
@@ -41,6 +44,7 @@
     </header>
 
     <main>
+      <!-- Parte Onde Sera Mostrado os compromissos do dia -->
       <section class="home">
         <div class="img">
           <img src="./assets/img4.png" alt="" />
@@ -56,22 +60,36 @@
           </section>
         </div>
       </section>
+      <!-- Parte Modal para editar os compromissos -->
+      <div class="modal-container" id="modalEditar" style="display: none">
+        <div class="modal">
+          <form id="formEditar">
+           
 
-      <div id="sectionWeek" class="hideen">
-        <h2 id="h2">Tabela Semanal</h2>
-        <section class="semana">
-          <table>
-            
-            <tbody id="tableBodySemana"></tbody>
-                
-          </table>
-        </section>
+            <label for="descricao">Compromisso</label>
+            <input
+              id="descricao"
+              name="nome"
+              type="text"
+              placeholder="Ex: Reunião, Aula, etc."
+              required
+            />
+
+            <label for="tempI">Tempo Inicial</label>
+            <input id="tempI" name="tempoInicial" type="time" required />
+
+            <label for="tempF">Tempo Final</label>
+            <input id="tempF" name="tempoFinal" type="time" required />
+
+            <button type="submit" id="btnSalvar">Salvar</button>
+          </form>
+        </div>
       </div>
     </main>
-    
-     <footer>
-        <p>Desenvolvido por Pedro Zacarias@Projeto final-Let's Code</p>
-     </footer>
+
+    <footer>
+      <p>Desenvolvido por Pedro Zacarias@Projeto final-Let's Code</p>
+    </footer>
 
     <script src="./scripts/script.js"></script>
   </body>

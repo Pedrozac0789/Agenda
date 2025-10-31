@@ -79,9 +79,9 @@ app.post("/adicionar", async (req, res) => {
 
 // EDITAR
 
-app.patch("/tarefas/:id", async (req, res) => {
+app.patch("/editarTarefas/:id", async (req, res) => {
   try {
-    const { id } = req.params;
+    const { idtarefas } = req.params;
     const { descricao } = req.body;
     const { start_time } = req.body;
     const { end_time } = req.body;
@@ -89,7 +89,7 @@ app.patch("/tarefas/:id", async (req, res) => {
       "UPDATE tarefas SET descricao = ?, start_time = ?, end_time = ? WHERE idtarefas = ?";
     const [result] = await conexao
       .promise()
-      .query(sql, [descricao, start_time, end_time, id]);
+      .query(sql, [descricao, start_time, end_time, idtarefas]);
     return res.json({ message: "Sua tarefa foi atualizada" });
   } catch (error) {
     console.log(error);

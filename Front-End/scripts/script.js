@@ -1,4 +1,4 @@
-//Datas
+
 
 const diaAtual = document.getElementById("diaAtual");
 
@@ -33,37 +33,110 @@ async function buscarDadosHoje(data) {
     dados = await response.json();
     ul.innerHTML = "";
     dados.forEach((item) => {
-      ul.innerHTML += `<li>
-     <div class="tarefa-desc">${item.descricao}</div>
-          <div class="tarefa-horario">${item.start_time}-${item.end_time}</div>
-          <div class="tarefa-actions">
-            <button class="btns" title="Editar" aria-label="Editar"><i class='bx bx-edit'></i></button>
-            <button class="btns" title="Excluir" aria-label="Excluir"><i class='bx bx-trash'></i></button>
-          </div>
-    </li>
-    <hr>
-    `;
+      ul.innerHTML += `<li data-id="${item.id}">
+      <div class="tarefa-desc">${item.descricao}</div>
+      <div class="tarefa-horario">${item.start_time}-${item.end_time}</div>
+      <div class="tarefa-actions">
+      <button class="btns editar-btn" title="Editar" aria-label="Editar"><i class='bx bx-edit'></i></button>
+      <button class="btns excluir-btn" title="Excluir" aria-label="Excluir"><i class='bx bx-trash'></i></button>
+      </div>
+      </li>
+      <hr>`;
     });
   } catch (error) {}
 }
 
 buscarDadosHoje(date);
 
-//MOSTRAR TABELA SEMANAL
+// função de excluir 
 
-let statusWeek = false;
-function openWeek() {
-  const sectionWeek = document.getElementById("sectionWeek");
-  if (statusWeek == false) {
-    sectionWeek.classList.remove("hideen");
-    statusWeek = true;
-  } else {
-    sectionWeek.classList.add("hideen");
-    statusWeek = false;
-  }
+function excluirItem(id) {
+  fetch(`http://localhost:3002/deletarTarefa/${id}`, {
+    method: 'DELETE',
+  })
+  .then(response => {
+    if (response.ok) {
+      console.log('Item excluído com sucesso');
+      buscarDadosHoje(date); // atualiza a lista
+    } else {
+      console.error('Erro ao excluir');
+    }
+  });
 }
 
-function week() {}
+// função editir
+function editarItem(idtarefas, dadosAtualizados) {
+  fetch(`http://localhost:3002/editarTarefa/${idtarefas}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(dadosAtualizados),
+  })
+    .then((response) => {
+      if (response.ok) {
+        alert("Tarefa editada com sucesso");
+        buscarDadosHoje(date); // Atualiza a lista
+      } else {
+        alert("Erro ao editar tarefa");
+      }
+    })
+    .catch((error) => {
+      console.error("Erro na requisição:", error);
+    });
+}
+
+
+let tarefaEditandoId = null;
+
+ul.addEventListener("click", (e) => {
+  const li = e.target.closest("li");
+  const id = li?.getAttribute("data-id");
+
+  if (e.target.closest(".editar-btn")) {
+    tarefaEditandoId = id;
+
+    // Preenche os campos com os dados da tarefa
+    const descricao = li.querySelector(".tarefa-desc")?.textContent.trim();
+    const horario = li.querySelector(".tarefa-horario")?.textContent.trim();
+    const [start_time, end_time] = horario.split("-").map(h => h.trim());
+
+    document.getElementById("descricao").value = descricao || "";
+    document.getElementById("tempI").value = start_time || "";
+    document.getElementById("tempF").value = end_time || "";
+
+    // Exibe o modal
+    document.getElementById("modalEditar").style.display = "flex";
+  }
+
+  if (e.target.closest(".excluir-btn")) {
+    excluirItem(id);
+  }
+});
+
+document.getElementById("formEditar").addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const descricao = document.getElementById("descricao").value;
+  const start_time = document.getElementById("tempI").value;
+  const end_time = document.getElementById("tempF").value;
+
+  if (!descricao || !start_time || !end_time) {
+    alert("Preencha todos os campos");
+    return;
+  }
+
+  editarItem(tarefaEditandoId, { descricao, start_time, end_time });
+
+  // Fecha o modal
+  document.getElementById("modalEditar").style.display = "none";
+});
+
+
+
+//MOSTRAR TABELA SEMANAL
+
+
 
 // ADICIONAR TAREFAS NO BANCO DE DADOS
 
@@ -289,3 +362,43 @@ function renderTabelaSemana(semanaComTarefas) {
 // Inicia a renderização ao carregar a página
 document.addEventListener("DOMContentLoaded", carregarSemana);
 
+
+
+
+
+
+
+
+// função de excluir 
+
+function excluirItem(id) {
+  fetch(`http://localhost:3002/deletarTarefa/${id}`, {
+    method: 'DELETE',
+  })
+  .then(response => {
+    if (response.ok) {
+      console.log('Item excluído com sucesso');
+    } else {
+      console.error('Erro ao excluir');
+    }
+  });
+}
+
+// função editir
+function editarItem(id, dadosAtualizados) {
+  fetch(`http://localhost:3002/editarTarefa/${id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(dadosAtualizados),
+  })
+  .then(response => {
+    if (response.ok) {
+      console.log('Item editado com sucesso');
+      buscarDadosHoje(date); // atualiza a lista
+    } else {
+      console.error('Erro ao editar');
+    }
+  });
+}

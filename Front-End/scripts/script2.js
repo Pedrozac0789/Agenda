@@ -1,6 +1,19 @@
 const btnSalvar = document.getElementById("btnSalvar");
 const formWeek = document.getElementById('form-week');
 
+let statusWeek = false;
+function openWeek() {
+  const sectionWeek = document.getElementById("sectionWeek");
+  if (statusWeek == false) {
+    sectionWeek.classList.remove("hideen");
+    statusWeek = true;
+  } else {
+    sectionWeek.classList.add("hideen");
+    statusWeek = false;
+  }
+}
+
+function week() {}
 async function adicionarTarefa() {
   const diaSemana = document.getElementById("diaSemana").value;
   const descricao = document.getElementById("descricao").value;

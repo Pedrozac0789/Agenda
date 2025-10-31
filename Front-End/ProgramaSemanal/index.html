@@ -4,13 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
-   
-
 
     <title>Crie um Programa Semanal</title>
   </head>
   <body>
-     <header>
+    <header>
       <section class="logo">
         <img src="../assets/img1.png" alt="" />
         <h1>Organize <span>+</span></h1>
@@ -19,20 +17,22 @@
       <nav>
         <ul>
           <li>
-           <a href="../index.html"> <button class="btn-header" type="button">Home</button></a> 
+            <a href="../index.html">
+              <button class="btn-header" type="button">Home</button></a
+            >
           </li>
           <li>
-            <a href="./ProgramaSemanal/index.html"
+            <a href="./index.html"
               ><button class="btn-header" type="button">
                 Criar programa semanal
               </button></a
             >
           </li>
           <li>
-            <a href="#h2">
-            <button class="btn-header" type="button" onclick="openWeek()">
-              Tabela Semanal
-            </button>
+            <a href="../TabelaSemanal/index.html#h2">
+              <button class="btn-header" type="button" onclick="openWeek()">
+                Tabela Semanal
+              </button>
             </a>
           </li>
         </ul>
@@ -45,14 +45,15 @@
           <img src="../assets/img5.png" alt="" />
         </div>
         <div>
-          <h2>Organize sua Semana <br><span >De Forma Eficiente!</span></h2>
+          <h2>Organize sua Semana <br /><span>De Forma Eficiente!</span></h2>
           <p>
             Utilize nosso formulário para criar um programa semanal
-            personalizado.
-            Adicione compromissos, defina horários e mantenha-se organizado ao
-            longo da semana.
+            personalizado. Adicione compromissos, defina horários e mantenha-se
+            organizado ao longo da semana.
           </p>
-         <button class="btn-hedaer"><a href="#titlle_form">Crie Aqui </a></button> 
+          <button class="btn-hedaer">
+            <a href="#titlle_form">Crie Aqui </a>
+          </button>
         </div>
       </section>
 
@@ -69,13 +70,19 @@
           <form id="formWeek">
             <label for="diaSemena">Escolha um dia da semena</label>
             <br />
-            <select name="diaSemana" id="diaSemana" title="Escolha um dia da semana"
-            >
-         
-            </select>
+            <select
+              name="diaSemana"
+              id="diaSemana"
+              title="Escolha um dia da semana"
+            ></select>
             <br />
             <label for="nome">Compromisso</label>
-            <input id="descricao" name="nome" type="text" placeholder="Ex: Reunião, Aula, etc." required
+            <input
+              id="descricao"
+              name="nome"
+              type="text"
+              placeholder="Ex: Reunião, Aula, etc."
+              required
             />
 
             <label for="tempI">Tempo Inicial</label>
@@ -88,8 +95,11 @@
           </form>
         </div>
       </section>
-      
     </main>
+    
+     <footer>
+        <p>Desenvolvido por Pedro Zacarias@Projeto final-Let's Code</p>
+     </footer>
     <script src="../scripts/script.js"></script>
   </body>
 </html>
