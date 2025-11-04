@@ -53,6 +53,19 @@ app.get("/tarefas/:date", async (req, res) => {
   }
 });
 
+// buscar tarefa pelo id
+app.get("/tarefa/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const sql = "SELECT * FROM tarefas WHERE idtarefas = ?";
+    const [result] = await conexao.promise().query(sql, [id]);
+    return res.json(result);
+  } catch (error) {
+    console.log(error);
+    return res.status(500).send("Erro ao buscar tarefas por id");
+  }
+});
+
 // TABELA SEMANAL
 
 // ADICIONAR UMA TAREFA , O TEMPO INICIAL E O TEMPO FINAL
@@ -79,12 +92,13 @@ app.post("/adicionar", async (req, res) => {
 
 // EDITAR
 
-app.patch("/editarTarefas/:id", async (req, res) => {
+app.patch("/editarTarefas/:idtarefas", async (req, res) => {
   try {
     const { idtarefas } = req.params;
     const { descricao } = req.body;
     const { start_time } = req.body;
     const { end_time } = req.body;
+    console.log(idtarefas, descricao, start_time, end_time);
     const sql =
       "UPDATE tarefas SET descricao = ?, start_time = ?, end_time = ? WHERE idtarefas = ?";
     const [result] = await conexao
