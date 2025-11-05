@@ -4,13 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../styles/test.css" />
-  
-    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../style.css" />
+
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <title>Tabela Semanal</title>
   </head>
   <body>
     <header>
-     <section class="logo">
+      <section class="logo">
         <img src="../assets/img1.png" alt="" />
         <h1>Organize <span>+</span></h1>
       </section>
@@ -18,8 +22,8 @@
         <ul>
           <li>
             <a href="../index.html">
-            <button class="btn-header" type="button">Home</button>
-          </a>
+              <button class="btn-header" type="button">Home</button>
+            </a>
           </li>
           <li>
             <a href="../ProgramaSemanal/index.html"
@@ -30,9 +34,9 @@
           </li>
           <li>
             <a href="./index.html#h2">
-            <button class="btn-header" type="button" onclick="openWeek()">
-              Tabela Semanal
-            </button>
+              <button class="btn-header" type="button" onclick="openWeek()">
+                Tabela Semanal
+              </button>
             </a>
           </li>
         </ul>
@@ -49,11 +53,42 @@
           </table>
         </section>
       </div>
+
+      <!-- Parte Modal para editar os compromissos -->
+      <div class="modal-container" id="modalEditar" style="display: none">
+        <div class="modal">
+          <form id="formEditar">
+            <label for="descricao">Compromisso</label>
+            <input
+              id="descricao"
+              name="descricao"
+              type="text"
+              placeholder="Ex: Reunião, Aula, etc."
+              required
+            />
+
+            <label for="tempI">Tempo Inicial</label>
+            <input id="tempI" name="tempI" type="time" required />
+
+            <label for="tempF">Tempo Final</label>
+            <input id="tempF" name="tempF" type="time" required />
+
+            <button style="cursor: pointer" type="submit" id="btnSalvar">
+              Salvar
+            </button>
+            <button style="cursor: pointer" type="button" id="btnCancelar">
+              Cancelar
+            </button>
+          </form>
+        </div>
+      </div>
     </main>
-    
-     <footer>
-        <p>Desenvolvido por Pedro Zacarias@Projeto final-Let's Code</p>
-     </footer>
-    <script src="../scripts/script.js"></script>
+
+    <footer>
+      <p>Desenvolvido por Pedro Zacarias@Projeto final-Let's Code</p>
+    </footer>
+
+    <script src="./script.js"></script>
+   
   </body>
 </html>
