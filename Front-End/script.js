@@ -137,3 +137,23 @@ if (formEditarEl) {
         buscarDadosHoje(date);
     });
 }
+
+
+async function excluirTarefa(id) {
+    try {
+        response = await fetch(`http://localhost:3002/deletarTarefa/${id}`, {
+            method: "DELETE",
+        });
+        dados = await response.json();
+        console.log(dados);
+        if (response.status === 200) {
+            alert("Tarefa excluída com sucesso!");
+            buscarDadosHoje(date);
+        } else {
+            alert("Erro ao excluir tarefa!");
+        }
+    } catch (error) {
+        console.error('Erro ao excluir tarefa:', error);
+        alert("Erro ao excluir tarefa!");
+    }
+}
