@@ -118,6 +118,7 @@ app.delete("/deletarTarefa/:id", async (req, res) => {
     const { id } = req.params;
     const sql = "DELETE FROM tarefas WHERE idtarefas = ?;";
     const [result] = await conexao.promise().query(sql, [id]);
+    return res.json({ message: "Sua tarefa foi excluída" });
   } catch (error) {
     console.log(error);
     return res.status(500).send("Error ao deletar a tarefa");
