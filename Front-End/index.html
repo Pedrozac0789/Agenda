@@ -45,51 +45,55 @@
 
     <main>
       <!-- Parte Onde Sera Mostrado os compromissos do dia -->
-      <section class="home">
-        <div class="img">
-          <img src="./assets/img4.png" alt="" />
-        </div>
-        <div class="tarefa">
-          <h1 id="dds"></h1>
-          <h2 id="diaAtual">Dia:</h2>
+      <section class="centralizar">
+        <section class="home">
+          <div class="img">
+            <img src="./assets/img4.png" alt="" />
+          </div>
+          <div class="tarefa">
+            <h1 id="dds"></h1>
+            <h2 id="diaAtual">Dia:</h2>
 
-          <section>
-            <ul id="listaTarefas" class="ul">
-              <li></li>
-            </ul>
-          </section>
+            <section>
+              <ul id="listaTarefas" class="ul">
+                <li></li>
+              </ul>
+            </section>
+          </div>
+        </section>
+        <!-- Parte Modal para editar os compromissos -->
+        <div class="modal-container" id="modalEditar" style="display: none">
+          <div class="modal">
+            <form id="formEditar">
+              <label for="descricao">Compromisso</label>
+              <input
+                id="descricao"
+                name="descricao"
+                type="text"
+                placeholder="Ex: Reunião, Aula, etc."
+                required
+              />
+
+              <label for="tempI">Tempo Inicial</label>
+              <input id="tempI" name="tempI" type="time" required />
+
+              <label for="tempF">Tempo Final</label>
+              <input id="tempF" name="tempF" type="time" required />
+
+              <button style="cursor: pointer" type="submit" id="btnSalvar">
+                Salvar
+              </button>
+              <button style="cursor: pointer" type="button" id="btnCancelar">
+                Cancelar
+              </button>
+            </form>
+          </div>
         </div>
       </section>
-      <!-- Parte Modal para editar os compromissos -->
-      <div class="modal-container" id="modalEditar" style="display: none">
-        <div class="modal">
-          <form id="formEditar">
-           
-
-            <label for="descricao">Compromisso</label>
-            <input
-              id="descricao"
-              name="descricao"
-              type="text"
-              placeholder="Ex: Reunião, Aula, etc."
-              required
-            />
-
-            <label for="tempI">Tempo Inicial</label>
-            <input id="tempI" name="tempI" type="time" required />
-
-            <label for="tempF">Tempo Final</label>
-            <input id="tempF" name="tempF" type="time" required />
-
-            <button style="cursor: pointer;" type="submit" id="btnSalvar">Salvar</button>
-            <button style="cursor: pointer;" type="button" id="btnCancelar">Cancelar</button>
-          </form>
-        </div>
-      </div>
     </main>
 
     <footer>
-      <p>Desenvolvido por Pedro Zacarias@Projeto final-Let's Code</p>
+      <p>Desenvolvido por Pedro Zacarias@Projeto Final - Let's Code</p>
     </footer>
 
     <script src="script.js"></script>

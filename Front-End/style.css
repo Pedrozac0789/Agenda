@@ -1,5 +1,3 @@
-  
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&family=Roboto:wght@100;300;400;500;700;900&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap");
 
 * {
@@ -21,7 +19,7 @@ header {
   flex-direction: column;
   background-color: rgb(41, 2, 63);
   width: 100%;
-  height: 150px;
+  height: 135px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
@@ -68,12 +66,13 @@ li {
 main {
   color: rgb(111, 4, 172);
   text-align: center;
-  margin-top: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
+
+
 }
 
 .home {
@@ -81,10 +80,11 @@ main {
   justify-content: center;
   align-items: center;
   gap: 40px;
+ 
 }
 
 .tarefa {
-  margin-right: 500px;
+  margin-right: 400px;
 }
 
 /* LOGO / IMAGEM */
@@ -152,176 +152,6 @@ li {
   color: rgb(216, 161, 247);
 }
 
-/* LAYOUT DA SEMANA */
-.semana {
-  width: 90%;
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2px;
-}
-
-#h2 {
-  margin-left: 100px;
-  margin-bottom: 100px;
-}
-
-.hideen {
-  display: flex;
-  justify-content: center;
-  align-items: center;  
-  flex-direction: column;
-  margin-right: 110px;
-
-}
-
-#sectionWeek {
-  margin-bottom: 100px;
-  width: 100%;
-  margin-left: 100px;
-}
-
-/* TABELA SEMANAL */
-#sectionWeek table {
-  width: 90%;
-  margin: 10px auto 40px;
-  border-collapse: separate;
-  border-spacing: 10px;
-  background: linear-gradient(180deg, #2f0650 0%, #24043b 100%);
-  color: #e9def9;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-  overflow: hidden;
-  table-layout: fixed; /* importante para colunas estáveis */
-  margin-top: 400px;
-  margin-bottom: 200px;
-}
-#sectionWeek{
-    margin-bottom: 500px;
-    width: 90%;
-
-}
-#sectionWeek h2 {
-    margin-top: 120px;
-    margin-right: 100px;
-  color: #8a69f6;
-  font-size: 32px;
-  text-shadow: 2px 1px 3px hsl(263, 98%, 64%);
-  
-}
-
-#sectionWeek thead {
-  display: table-header-group;
-  width: 100%;
-}
-#sectionWeek thead tr {
-  display: table;
-  width: 100%;
-  table-layout: fixed;
-}
-
-#tableBodySemana {
-  display: block;              /* transforma tbody em container rolável */
-  max-height: 409px;          /* ajuste conforme necessidade */
-  overflow-y: auto;
-  width: 100%;
-}
-
-
-/* Cabeçalho inserido pelo JS (primeira linha dentro do tbody) */
-#tableBodySemana tr:first-child th {
-  background: rgba(255, 255, 255, 0.04);
-  padding: 12px 14px;
-  text-align: left;
-  font-weight: 600;
-  color: #ffdfff;
-  font-size: 14px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-/* Linhas da tabela */
-#tableBodySemana tr {
-  background: transparent;
-   display: table;
-  width: 100%;
-  table-layout: fixed;
-}
-
-/* Células contendo tarefas */
-#tableBodySemana td {
-  vertical-align: top;
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.02);
-  border-radius: 8px;
-  min-width: 120px;
-  max-width: 220px;
-  height: 120px; /* altura fixa para uniformizar linhas */
-  overflow: hidden;
-  position: relative;
-}
-
-
-/* células continuam como table-cell para alinhamento */
-#sectionWeek thead th,
-#tableBodySemana td {
-  padding: 12px;
-  vertical-align: top;
-  text-align: center;
-  box-sizing: border-box;
-  word-break: break-word;
-}
-
-/* scrollbar custom para tbody */
-#tableBodySemana::-webkit-scrollbar {
-  width: 10px;
-}
-#tableBodySemana::-webkit-scrollbar-track {
-  background: rgba(255,255,255,0.03);
-  border-radius: 10px;
-}
-#tableBodySemana::-webkit-scrollbar-thumb {
-  background: rgba(138,105,246,0.35);
-  border-radius: 10px;
-  border: 2px solid rgba(41,2,63,0.6);
-}
-
-/* Firefox */
-#tableBodySemana {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(138,105,246,0.35) rgba(255,255,255,0.03);
-}
-
-/* opcional: reduz altura das células para caber no scroll */
-#tableBodySemana td .tarefa-cell-wrapper {
-  max-height: 140px;
-  overflow: hidden;
-  width: 100%;
-}
-
-
-
-
-/* estilo para cada tarefa dentro da célula */
-.tarefa-desc {
-  
-  text-align: center;
-  font-weight: 600;
-  color: #f6e8ff;
-  margin-bottom: 6px;
-  line-height: 1.2;
-  word-break: break-word;
-  
-}
-
-.tarefa-horario {
-text-align: center;
-  font-size: 14px;
-  color: #d7bff9;
-  margin-bottom: 5px;
-  
-}
-
 /* Ações (botões) */
 .tarefa-actions {
   display: flex;
@@ -359,70 +189,12 @@ text-align: center;
   vertical-align: middle;
 }
 
-/* Célula vazia (estiliza quando não há tarefa) */
-#tableBodySemana td:empty,
-#tableBodySemana td:contains("—") {
-  display: table-cell;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.35);
-  font-size: 18px;
-  font-weight: 500;
-  margin-left: 20px;
-}
-
-/* pequenas melhorias visuais */
-#tableBodySemana td .tarefa-actions .btns:active {
-  transform: translateY(0);
-  opacity: 0.95;
-}
-
-/* RESPONSIVIDADE */
-@media (max-width: 900px) {
-  #sectionWeek table {
-    width: 98%;
-    font-size: 14px;
-  }
-
-  /* esconde o header tradicional (injetado via JS) */
-  #tableBodySemana tr:first-child {
-    display: none;
-  }
-
-  /* layout alternativo: empilha colunas como blocos */
-  #tableBodySemana {
-    display: block;
-  }
-
-  #tableBodySemana tr {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 8px;
-    margin-bottom: 10px;
-  }
-
-
-  #tableBodySemana td {
-    display: block;
-    width: 100%;
-    height: auto;
-    padding: 12px;
-  }
-}
-
-/* Firefox-only scrollbar properties applied via feature query to avoid errors in other browsers */
-@supports (scrollbar-width: thin) {
-  .ul,
-  #tableBodySemana td .tarefa-list {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(138, 105, 246, 0.35) rgba(255, 255, 255, 0.03);
-  }
-}
 
 
 footer{
-    margin-top: 100px;
+  margin-top: 5px;
     text-align: center;
-    padding: 20px;
+    padding: 9px;
     background-color: rgb(41, 2, 63);
     color: white;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
