@@ -3,13 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../styles/modal.css">
     <link rel="stylesheet" href="./style.css" />
+   
 
-    <link
-      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
-      rel="stylesheet"
-    />
     <title>Tabela Semanal</title>
   </head>
   <body>
@@ -55,7 +53,7 @@
       </div>
 
       <!-- Parte Modal para editar os compromissos -->
-      <div class="modal-container" id="modalEditar" style="display: none">
+      <div class="modal-container" id="modalEditar" >
         <div class="modal">
           <form id="formEditar">
             <label for="descricao">Compromisso</label>
@@ -73,10 +71,10 @@
             <label for="tempF">Tempo Final</label>
             <input id="tempF" name="tempF" type="time" required />
 
-            <button style="cursor: pointer" type="submit" id="btnSalvar">
+            <button  type="submit" id="btnSalvar">
               Salvar
             </button>
-            <button style="cursor: pointer" type="button" id="btnCancelar">
+            <button  type="button" id="btnCancelar">
               Cancelar
             </button>
           </form>
