@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./calendario/style.css">
     <link
       href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
       rel="stylesheet"
@@ -45,51 +46,55 @@
 
     <main>
       <!-- Parte Onde Sera Mostrado os compromissos do dia -->
-      <section class="centralizar">
-        <section class="home">
-          <div class="img">
-            <img src="./assets/img4.png" alt="" />
-          </div>
-          <div class="tarefa">
-            <h1 id="dds"></h1>
-            <h2 id="diaAtual">Dia:</h2>
 
-            <section>
-              <ul id="listaTarefas" class="ul">
-                <li></li>
-              </ul>
-            </section>
-          </div>
-        </section>
-        <!-- Parte Modal para editar os compromissos -->
-        <div class="modal-container" id="modalEditar" style="display: none">
-          <div class="modal">
-            <form id="formEditar">
-              <label for="descricao">Compromisso</label>
-              <input
-                id="descricao"
-                name="descricao"
-                type="text"
-                placeholder="Ex: Reunião, Aula, etc."
-                required
-              />
+      <section class="home">
+        <div class="img">
+          <img src="./assets/img4.png" alt="" />
+        </div>
+        <div class="tarefa">
+          <h1 id="dds"></h1>
+          <h2 id="diaAtual">Dia:</h2>
 
-              <label for="tempI">Tempo Inicial</label>
-              <input id="tempI" name="tempI" type="time" required />
-
-              <label for="tempF">Tempo Final</label>
-              <input id="tempF" name="tempF" type="time" required />
-
-              <button style="cursor: pointer" type="submit" id="btnSalvar">
-                Salvar
-              </button>
-              <button style="cursor: pointer" type="button" id="btnCancelar">
-                Cancelar
-              </button>
-            </form>
-          </div>
+          <section>
+            <ul id="listaTarefas" class="ul">
+              <li></li>
+            </ul>
+          </section>
+        </div>
+        
+        <div class="calendar">
+          <h2 id="monthYear"></h2>
+          <div class="days" id="daysContainer"></div>
         </div>
       </section>
+      <!-- Parte Modal para editar os compromissos -->
+      <div class="modal-container" id="modalEditar" style="display: none">
+        <div class="modal">
+          <form id="formEditar">
+            <label for="descricao">Compromisso</label>
+            <input
+              id="descricao"
+              name="descricao"
+              type="text"
+              placeholder="Ex: Reunião, Aula, etc."
+              required
+            />
+
+            <label for="tempI">Tempo Inicial</label>
+            <input id="tempI" name="tempI" type="time" required />
+
+            <label for="tempF">Tempo Final</label>
+            <input id="tempF" name="tempF" type="time" required />
+
+            <button style="cursor: pointer" type="submit" id="btnSalvar">
+              Salvar
+            </button>
+            <button style="cursor: pointer" type="button" id="btnCancelar">
+              Cancelar
+            </button>
+          </form>
+        </div>
+      </div>
     </main>
 
     <footer>
@@ -97,5 +102,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="./calendario/script.js"></script>
   </body>
 </html>
