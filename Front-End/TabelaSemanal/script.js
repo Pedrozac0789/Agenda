@@ -281,6 +281,7 @@ if (formEditarEl) {
                 alert("Tarefa editada com sucesso!");
                 document.getElementById("modalEditar").style.display = "none";
                 window.currentEditId = null;
+                carregarSemana();
             } else {
                 alert("Erro ao editar tarefa!");
             }

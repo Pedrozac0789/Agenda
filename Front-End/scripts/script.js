@@ -59,12 +59,6 @@ async function buscarDadosTarefa(id) {
 }
 
 
-
-
-
-
-
-
 async function editarTarefa(id) {
     document.getElementById("modalEditar").style.display = "flex";
     console.log(id)
