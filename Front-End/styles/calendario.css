@@ -49,3 +49,25 @@
   background: rgba(139, 6, 215, 0.811);
   box-shadow: 0 6px 16px rgba(138, 105, 246, 0.12);
 }
+
+
+
+
+.day-number {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+
+.today {
+    background-color: #2196F3;
+    color: white;
+    font-weight: bold;
+}
+
+.dia-selecionado {
+    background-color: #4CAF50 !important;
+    color: white !important;
+    font-weight: bold;
+}
